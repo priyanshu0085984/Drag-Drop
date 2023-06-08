@@ -1,38 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="index.css" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Drag and drop</title>
-  </head>
-  <body>
-    <button>Reset</button>
+<html>
+<head>
+  <title>Drag and Drop Assignment</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <button id="resetButton">Reset</button>
 
-    <!-- title "Drag and Drop Assignment" -->
-    <h2 class="title">Drag and Drop Assignment</h2>
-    <div class="container">
-        <!-- inner container for container 1 -->
-      <div class="inner-container">
-         <!-- title for container 1 -->
-        <h3>Container 1</h3>
-        <!-- container from which we need to drag the items -->
-        <div class="drag-container">
-            <div>Item 1</div>
-            <div>Item 2</div>
-            <div>Item 3</div>
-            <div>Item 4</div>
-        </div>
-      </div>
-      <!-- innner container for container 2 -->
-      <div class="inner-container">
-        <!-- title for container 2 -->
-        <h3>Container 2</h3>
-        <!-- container in which we need to drop the items -->
-        <div class="drop-container"></div>
+  <h1 class="title">Drag and Drop Assignment</h1>
+
+  <div class="container">
+    <div class="inner-container">
+      <h2>Container 1</h2>
+      <div id="container1" class="drag-container">
+        <div id="item1" class="draggable-item" draggable="true">Item 1</div>
+        <div id="item2" class="draggable-item" draggable="true">Item 2</div>
+        <div id="item3" class="draggable-item" draggable="true">Item 3</div>
       </div>
     </div>
-    <!-- A reset button to reset the layout -->
-  </body>
+    
+    <div class="inner-container">
+      <h2>Container 2</h2>
+      <div id="container2" class="drag-container" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"></div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
 </html>
